@@ -36,3 +36,5 @@ rm(values)
 
 # chain to group and then summarize each column
 tidy=tbl_df(total) %>% group_by(subject, activity) %>% summarise_each(funs(mean))
+
+write.table(tidy, file = "tidy.txt", row.name = F)
